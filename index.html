@@ -277,7 +277,25 @@
         </div>
         <span class="text-[#e0e0e0b3] w-full lg:w-4/5 px-6 text-sm  font-semibold my-3">Netflix India</span>
     </div>
-    <script src="script.js"></script>
+    <script>
+        let faqButtons = document.querySelectorAll('.faqBtns')
+let faqAnswers = document.querySelectorAll('.faqAnswers');
+
+faqButtons.forEach(btns => {
+    btns.addEventListener('click', (btn) =>{
+            
+            if (btns.nextElementSibling.classList.contains("h-max")) {
+                console.log("The element has the class 'yourClassName'");
+                btns.nextElementSibling.classList.add("h-0", "p-0", "overflow-hidden")
+                btns.nextElementSibling.classList.remove("h-max", "px-3", "py-6")
+            } else {
+                console.log("The element does not have the class 'yourClassName'");
+                btns.nextElementSibling.classList.remove("h-0", "p-0", "overflow-hidden")
+                btns.nextElementSibling.classList.add("h-max", "px-3", "py-6")
+          }
+    });
+});
+    </script>
 </body>
 
 </html>
